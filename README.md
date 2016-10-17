@@ -1,4 +1,4 @@
 # README
-![Build Status](https://codeship.com/projects/6c7846b0-6ba7-0134-66a1-2e8398cca30e/status?branch=master)
-![Code Climate](https://codeclimate.com/github/jcincotta22/boston-neighborhood-reviews.png)
-![Coverage Status](https://coveralls.io/repos/jcincotta22/boston-neighborhood-reviews/badge.png)
+![Build Status](https://codeship.com/projects/d5806240-6bdd-0134-b7c5-0a4cc10cdf6c/status?branch=master)
+![Code Climate](https://codeclimate.com/github/m-richard/official-finder.png)
+[![Coverage Status](https://coveralls.io/repos/github/m-richard/official-finder/badge.svg?branch=master)](https://coveralls.io/github/m-richard/official-finder?branch=master)
