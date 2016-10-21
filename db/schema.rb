@@ -10,25 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161017192701) do
+ActiveRecord::Schema.define(version: 20161020162111) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "cities", force: :cascade do |t|
-    t.string   "name",       null: false
-    t.string   "state",      null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table "addresses", force: :cascade do |t|
+    t.string  "street",      null: false
+    t.string  "city",        null: false
+    t.string  "state",       null: false
+    t.string  "zip_code",    null: false
+    t.integer "district_id", null: false
+    t.index ["district_id"], name: "index_addresses_on_district_id", using: :btree
   end
 
   create_table "districts", force: :cascade do |t|
     t.string   "name",           null: false
     t.string   "representative", null: false
-    t.integer  "city_id",        null: false
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
-    t.index ["city_id"], name: "index_districts_on_city_id", using: :btree
   end
 
 end
