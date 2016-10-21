@@ -1,13 +1,17 @@
 class AddressesController < ApplicationController
-  def show
+  def index
     @addresses = Address.all
   end
 
+  def new
+    @address = Address.new
+  end
+
   def create
-    @address = Address.new(address_params)
+    @address = Address.new
     if @address.save
       flash[:notice] = "Here are your elected officials"
-      redirect_to district_address_path
+      redirect_to district_addresses_path
     else
       flash[:notice] = "Something went wrong. Please try again"
       render :index
@@ -15,6 +19,5 @@ class AddressesController < ApplicationController
   end
 
   def update
-
   end
 end
