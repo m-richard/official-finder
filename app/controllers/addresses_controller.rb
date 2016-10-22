@@ -1,6 +1,6 @@
 class AddressesController < ApplicationController
   def index
-    @addresses = Address.all
+    @address = Address.all
   end
 
   def new
@@ -8,16 +8,24 @@ class AddressesController < ApplicationController
   end
 
   def create
-    @address = Address.new
+    @address = Address.new(address_params)
     if @address.save
       flash[:notice] = "Here are your elected officials"
-      redirect_to district_addresses_path
+      redirect_to addresses_path(@address)
     else
-      flash[:notice] = "Something went wrong. Please try again"
+      @errors = @address.errors.full_messages.join(', ')
+      flash[:notice] = @errors
       render :index
     end
   end
 
-  def update
+  def show
+    @address = Address.find(params[:id])
   end
+
+  # private
+  #
+  # def address_params
+  #   params.require(:address).permit(:district_id, :street, :city, :state, :zip_code)
+  # end
 end
